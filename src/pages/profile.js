@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import BalanceComponent from '../components/balance/balance'
 import Box from '../components/boxTextandValue/box'
+import SendForm from '../components/send/sendForm'
 
 const Profile = (props) => {
   const username = props.match.params.username
@@ -13,6 +14,7 @@ const Profile = (props) => {
       .then((response) => response.json())
       .then((data) => {
         setUserInfo(data)
+        console.log(data)
       })
   }, [])
 
@@ -21,6 +23,9 @@ const Profile = (props) => {
       <h1>{username}</h1>
       <Box text='Jobcoin Balance'>
         <BalanceComponent balance={userInfo.balance} />
+      </Box>
+      <Box text='Send Jobcoin'>
+        <SendForm balance={userInfo.balance} />
       </Box>
     </div>
   )

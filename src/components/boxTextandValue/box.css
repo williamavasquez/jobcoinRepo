@@ -1,8 +1,8 @@
 .boxContainer {
   border: lightslategray 3px solid;
-  border-radius: 5%;
+  border-radius: 2%;
   color: lightslategray;
-  max-width: 500px;
+  width: 500px;
 }
 
 .textDiv {
@@ -23,11 +23,10 @@ label {
 
 button {
   height: 40px;
-  margin-top: 30px;
   font-size: 1.3em;
 }
 
 input {
   height: 40px;
-  padding-left: 10px;
+  margin-bottom: 30px;
 }
