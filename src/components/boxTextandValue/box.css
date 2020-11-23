@@ -1,0 +1,33 @@
+.boxContainer {
+  border: lightslategray 3px solid;
+  border-radius: 5%;
+  color: lightslategray;
+  max-width: 500px;
+}
+
+.textDiv {
+  padding: 30px 50px;
+  border-bottom: 3px solid lightslategray;
+}
+
+.childrenDiv {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+}
+
+label {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+button {
+  height: 40px;
+  margin-top: 30px;
+  font-size: 1.3em;
+}
+
+input {
+  height: 40px;
+  padding-left: 10px;
+}

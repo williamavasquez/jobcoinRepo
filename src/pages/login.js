@@ -1,42 +1,36 @@
-import {useRef} from 'react'
+import { useRef } from 'react'
 import Logo from '../logo.svg'
+import Box from '../components/boxTextandValue/box'
 
 let Styles = {
-  mainComponent : {
-    display: "flex",
-    alighItems: "center",
-    backgroundColor: "red"
+  mainComponent: {
+    display: 'flex',
+    alighItems: 'center',
+    flexDirection: 'column',
   },
-  loginContainer: {
-    border: "solid 3px lightgray ",
-    borderRadius: "20px"
-  }
 }
 
-function Login(){
+function Login(props) {
+  console.log(props)
   const textRef = useRef()
 
-
-  const submitLogin = (e)=>{
+  const submitLogin = async (e) => {
     e.preventDefault()
 
-    console.log(textRef.current.value)
+    let address = textRef.current.value
+    props.history.push(`profile/${address}`)
   }
+
   return (
-  <div style={Styles.mainComponent}>
-    <img src={Logo} alt="logo" />
-    <div style={Styles.loginContainer}>
-      <div>
-        Welcome! Sign In With Your Jobcoin Address
-      </div>
-      <div>
-      <label htmlFor="jobcoinAddress">Do you like jobcoinAddress?</label>
-      <input type="text" ref={textRef} name="jobcoinAddress" id="cheese" />
-      <button onClick={(e)=>submitLogin(e)}>Submit</button>
-      </div>
+    <div style={Styles.mainComponent}>
+      <img src={Logo} alt='logo' />
+      <Box text={'Welcome! Sign In With Your Jobcoin Address'}>
+        <label htmlFor='jobcoinAddress'>Do you like jobcoinAddress?</label>
+        <input type='text' ref={textRef} name='jobcoinAddress' id='cheese' />
+        <button onClick={(e) => submitLogin(e)}>Sign In</button>
+      </Box>
     </div>
-  </div>
-    )
+  )
 }
 
 export default Login
