@@ -4,12 +4,13 @@ const SendForm = (props) => {
   const destination = useRef(null)
   const amountToBeSent = useRef(null)
 
-  const sendJobCoins = (e) => {
+  const sendFunc = (e)=>{
     e.preventDefault()
 
-    console.log(props)
+    let sendTo = destination.current.value
+    let amount = amountToBeSent.current.value
+    props.sendJobCoins({sendTo, amount})
   }
-
   return (
     <>
       <label htmlFor='destination'>Destination Address</label>
@@ -18,7 +19,7 @@ const SendForm = (props) => {
       <label htmlFor='amount'>Amount to Send</label>
       <input type='text' ref={amountToBeSent} name='amount' />
 
-      <button onClick={(e) => sendJobCoins(e)}>Send Jobcoins</button>
+      <button onClick={(e) => sendFunc(e)}>Send Jobcoins</button>
     </>
   )
 }

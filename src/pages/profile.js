@@ -18,6 +18,12 @@ const Profile = (props) => {
       })
   }, [])
 
+  const sendJobCoins = ({sendTo,amount})=>{
+
+    console.log(sendTo)
+    console.log(amount)
+  }
+
   return (
     <div>
       <h1>{username}</h1>
@@ -25,7 +31,7 @@ const Profile = (props) => {
         <BalanceComponent balance={userInfo.balance} />
       </Box>
       <Box text='Send Jobcoin'>
-        <SendForm balance={userInfo.balance} />
+        <SendForm balance={userInfo.balance}  sendJobCoins={sendJobCoins} />
       </Box>
     </div>
   )
