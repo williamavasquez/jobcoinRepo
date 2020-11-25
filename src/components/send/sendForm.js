@@ -4,12 +4,15 @@ const SendForm = (props) => {
   const destination = useRef(null)
   const amountToBeSent = useRef(null)
 
-  const sendFunc = (e)=>{
+  const sendFunc = (e) => {
     e.preventDefault()
 
     let sendTo = destination.current.value
     let amount = amountToBeSent.current.value
-    props.sendJobCoins({sendTo, amount})
+    props.sendJobCoins({ sendTo, amount })
+
+    destination.current.value = ''
+    amountToBeSent.current.value = ''
   }
   return (
     <>
